@@ -1,9 +1,8 @@
 package ru.tiunov.service;
 
-import exception.InsufficientQuantityException;
-import exception.NotFoundElement;
+import ru.tiunov.exception.InsufficientQuantityException;
+import ru.tiunov.exception.NotFoundElement;
 import ru.tiunov.dto.SockDto;
-import ru.tiunov.model.Sock;
 
 public interface SockService {
     void addSocks(SockDto.Request.Standard sockStandard);

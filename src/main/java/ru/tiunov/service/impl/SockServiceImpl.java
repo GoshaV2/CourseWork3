@@ -1,7 +1,7 @@
 package ru.tiunov.service.impl;
 
-import exception.InsufficientQuantityException;
-import exception.NotFoundElement;
+import ru.tiunov.exception.InsufficientQuantityException;
+import ru.tiunov.exception.NotFoundElement;
 import org.springframework.stereotype.Service;
 import ru.tiunov.dto.SockDto;
 import ru.tiunov.model.Sock;

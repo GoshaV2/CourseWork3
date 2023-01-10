@@ -1,4 +1,4 @@
-package errorHandling;
+package ru.tiunov.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

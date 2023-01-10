@@ -1,6 +1,5 @@
 package ru.tiunov.dto;
 
-import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Value;
 import ru.tiunov.model.Color;
 import ru.tiunov.model.Size;
@@ -16,31 +15,31 @@ public class SockDto {
         @NotNull Color getColor();
     }
 
-    private interface SizeInterface{
+    private interface SizeInterface {
         @NotNull
         Size getSize();
     }
 
-    private interface CottonPart{
+    private interface CottonPart {
         @Max(100)
         @Min(0)
         @Positive
         int getCottonPart();
     }
 
-    private interface Quantity{
+    private interface Quantity {
         @Min(1)
         int getQuantity();
     }
 
-    private interface CottonMax{
+    private interface CottonMax {
         @Max(100)
         @Min(0)
         @Positive
         int getCottonMax();
     }
 
-    private interface CottonMin{
+    private interface CottonMin {
         @Max(100)
         @Min(0)
         @Positive
@@ -50,13 +49,13 @@ public class SockDto {
 
     public static class Request {
         @Value
-        public static class Standard implements ColorInterface,SizeInterface,CottonPart,Quantity{
+        public static class Standard implements ColorInterface, SizeInterface, CottonPart, Quantity {
             Color color;
             Size size;
             int cottonPart;
             int quantity;
 
-            public Sock fromDto(){
+            public Sock fromDto() {
                 return Sock.builder()
                         .size(this.getSize())
                         .color(this.getColor())
@@ -67,7 +66,7 @@ public class SockDto {
         }
 
         @Value
-        public static class GetWithOptions implements ColorInterface, SizeInterface, CottonMax,CottonMin{
+        public static class GetWithOptions implements ColorInterface, SizeInterface, CottonMax, CottonMin {
             Color color;
             Size size;
             int cottonMax;
@@ -75,9 +74,9 @@ public class SockDto {
         }
     }
 
-    public static class Response{
+    public static class Response {
         @Value
-        public static class Quantity implements SockDto.Quantity{
+        public static class Quantity implements SockDto.Quantity {
             int quantity;
         }
     }

@@ -1,8 +1,10 @@
-package errorHandling;
+package ru.tiunov.errorHandlingController;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
+import ru.tiunov.model.ValidationErrorResponse;
+import ru.tiunov.model.Violation;
 
 import javax.validation.ConstraintViolationException;
 import java.util.List;

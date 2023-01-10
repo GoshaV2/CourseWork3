@@ -1,4 +1,4 @@
-package exception;
+package ru.tiunov.exception;
 
 public class InsufficientQuantityException extends Exception{
     private final int gettingQuantity;

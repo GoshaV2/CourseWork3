@@ -1,4 +1,4 @@
-package exception;
+package ru.tiunov.exception;
 
 public class NotFoundElement extends Exception{
     public NotFoundElement() {
