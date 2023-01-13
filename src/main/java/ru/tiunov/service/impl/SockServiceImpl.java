@@ -27,7 +27,7 @@ public class SockServiceImpl implements SockService {
     }
 
     @Override
-    public void realiseSocks(SockDto.Request.Standard sockStandard) throws NotFoundElement, InsufficientQuantityException {
+    public void realiseSocks(SockDto.Request.Standard sockStandard){
         Sock sock = sockStandard.fromDto();
         int reducingQuantity = sockStandard.getQuantity();
         reduceQuantity(sock,reducingQuantity);
@@ -50,7 +50,7 @@ public class SockServiceImpl implements SockService {
     }
 
     @Override
-    public void writeOffSocks(SockDto.Request.Standard sockStandard) throws NotFoundElement, InsufficientQuantityException {
+    public void writeOffSocks(SockDto.Request.Standard sockStandard){
         Sock sock = sockStandard.fromDto();
         int reducingQuantity = sockStandard.getQuantity();
         reduceQuantity(sock,reducingQuantity);

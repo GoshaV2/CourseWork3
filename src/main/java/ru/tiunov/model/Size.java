@@ -1,6 +1,8 @@
 package ru.tiunov.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import ru.tiunov.exception.NotFoundSizeException;
 
 public enum Size {
     SizeA(36.5f), SizeB(37), SizeC(37.5f);
@@ -18,15 +20,18 @@ public enum Size {
     }
 
 
+    @JsonCreator
     public static Size forValues(String size) {
-        for (Size el : Size.values()) {
-            if (
-                    String.valueOf(el.getName()).equals(size)) {
-                return el;
+        try {
+            for (Size el : Size.values()) {
+                if (Float.parseFloat(size)== el.name) {
+                    return el;
+                }
             }
+        }catch (NumberFormatException e){
+            throw new NotFoundSizeException();
         }
-
-        return null;
+        throw new NotFoundSizeException();
     }
 
 }

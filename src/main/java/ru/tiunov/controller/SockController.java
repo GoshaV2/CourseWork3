@@ -3,7 +3,6 @@ package ru.tiunov.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
-import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -108,13 +107,7 @@ public class SockController {
     )
     @DeleteMapping
     public ResponseEntity writeOffSocks(@Valid @RequestBody SockDto.Request.Standard sock) {
-        try {
-            sockService.writeOffSocks(sock);
-        } catch (NotFoundElement e) {
-            return ResponseEntity.notFound().build();
-        } catch (InsufficientQuantityException e) {
-            return ResponseEntity.noContent().build();
-        }
+        sockService.writeOffSocks(sock);
         return ResponseEntity.ok().build();
     }
 }
