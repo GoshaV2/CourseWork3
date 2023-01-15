@@ -5,7 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import ru.tiunov.exception.NotFoundSizeException;
 
 public enum Size {
-    SizeA(36.5f), SizeB(37), SizeC(37.5f);
+    SizeA(36.5f), SizeB(37), SizeC(37.5f), SizeD(38f), SizeE(38.5f), SizeF(39f),
+    SizeT(39.5f), SizeG(40f), SizeH(40.5f), SizeS(41f), SizeV(41.5f), SizeN(42f);
 
 
     private final float name;
